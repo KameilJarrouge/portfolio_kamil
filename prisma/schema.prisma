@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = "postgres://default:JQ8hoTLEH1Ux@ep-broad-grass-357147-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=10"
+  directUrl         = "postgres://default:JQ8hoTLEH1Ux@ep-broad-grass-357147.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+  shadowDatabaseUrl = "postgres://default:JQ8hoTLEH1Ux@ep-broad-grass-357147.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+}
+
+model Galary {
+  id    Int     @id @default(autoincrement())
+  title String
+  about String?
+  img   String?
+}
