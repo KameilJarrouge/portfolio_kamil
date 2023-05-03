@@ -7,9 +7,9 @@ generator client {
 
 datasource db {
   provider          = "postgresql"
-  url               = "postgres://default:JQ8hoTLEH1Ux@ep-broad-grass-357147-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=10"
-  directUrl         = "postgres://default:JQ8hoTLEH1Ux@ep-broad-grass-357147.us-east-1.postgres.vercel-storage.com:5432/verceldb"
-  shadowDatabaseUrl = "postgres://default:JQ8hoTLEH1Ux@ep-broad-grass-357147.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+  url               = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
 model Galary {

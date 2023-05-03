@@ -4,8 +4,18 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const callApi = async () => {
+    try {
+      const res = await fetch(`/api/hello`);
+      const data = await res.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <main
+      onClick={callApi}
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -33,6 +43,10 @@ export default function Home() {
           width={180}
           height={37}
           priority
+        />
+        <img
+          src="https://scontent-fra5-2.xx.fbcdn.net/v/t39.30808-6/342971902_564006629048403_2648319124464330189_n.jpg?stp=dst-jpg_p417x417&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=img5ZBVB05sAX9Ui6NO&_nc_ht=scontent-fra5-2.xx&oh=00_AfBkaoLIfzZbacvETzPnMVAVV0dE-XVRNzQBej1MWWaVaQ&oe=6456D74A"
+          alt=""
         />
       </div>
 
