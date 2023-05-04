@@ -44,8 +44,9 @@ export default function Home({ galaries = {} }) {
           </div>
           {/* nav */}
           <div className="px-1 font-bold  min-h-[5vh]  bg-transparent flex overflow-x-scroll 2xl:flex-wrap gap-3 text-lg items-end ">
-            {Object.keys(galaries).map((galary) => (
+            {Object.keys(galaries).map((galary, index) => (
               <Tab
+                key={index}
                 title={galary}
                 selection={selection}
                 setSelection={setSelection}
@@ -55,8 +56,11 @@ export default function Home({ galaries = {} }) {
           </div>
           <div className="   min-h-[50vh] bg-transparent  pb-2 ">
             <div className="w-full min-h-[50vh] bg-gray-200 rounded-md py-5 px-1 flex flex-wrap gap-4 justify-center items-start ">
-              {images.map((image) => (
-                <div className="flex flex-col w-1/4 min-w-[320px]  shadow shadow-black/50 rounded-md mx-1 grow  ">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col w-1/4 min-w-[320px]  shadow shadow-black/50 rounded-md mx-1 grow  "
+                >
                   <img
                     src={image.url}
                     alt=""
