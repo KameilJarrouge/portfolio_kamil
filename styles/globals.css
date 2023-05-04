@@ -11,17 +11,41 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 179, 179, 179;
+    --background-end-rgb: 179, 179, 179;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: "#B3B3B3";
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+.st0 {
+  fill: none;
+}
+.st1 {
+  fill: #fb8c00;
+}
+.st2 {
+  font-family: AardvarkPSMT;
+}
+.st3 {
+  font-size: 48px;
+}
+.st4 {
+  font-family: "Swiss721BT-BlackExtended";
+}
+.st5 {
+  font-size: 20px;
+}
+.st6 {
+  filter: url(#Adobe_OpacityMaskFilter);
+}
+.st7 {
+  mask: url(#Vector_Smart_Object_xA0_Image_2_);
 }
