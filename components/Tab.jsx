@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 function Tab({
+  id,
   title = "Fair",
   selection = "",
   setSelection = (f) => f,
@@ -10,6 +11,7 @@ function Tab({
 
   return (
     <div
+      id={id}
       onClick={() => {
         setSelection(title);
         onClick();
